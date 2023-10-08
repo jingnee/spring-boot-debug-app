@@ -27,24 +27,24 @@ spec:
             limits:
               memory: {{ .Values.resources.memoryLimit }}
               cpu: {{ .Values.resources.cpuLimit }}
-          livenessProbe:
-            initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
-            httpGet:
-              port: {{ .Values.ports.management.value }}
-              path: {{ .Values.probes.liveness.path }}
-            failureThreshold: {{ .Values.probes.liveness.failureThreshold }}
-            successThreshold: {{ .Values.probes.liveness.successThreshold }}
-            timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
-            periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
-          readinessProbe:
-            initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
-            httpGet:
-              port: {{ .Values.ports.management.value }}
-              path: {{ .Values.probes.readiness.path }}
-            failureThreshold: {{ .Values.probes.readiness.failureThreshold }}
-            successThreshold: {{ .Values.probes.readiness.successThreshold }}
-            timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
-            periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
+          # livenessProbe:
+          #   initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
+          #   httpGet:
+          #     port: {{ .Values.ports.management.value }}
+          #     path: {{ .Values.probes.liveness.path }}
+          #   failureThreshold: {{ .Values.probes.liveness.failureThreshold }}
+          #   successThreshold: {{ .Values.probes.liveness.successThreshold }}
+          #   timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
+          #   periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
+          # readinessProbe:
+          #   initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
+          #   httpGet:
+          #     port: {{ .Values.ports.management.value }}
+          #     path: {{ .Values.probes.readiness.path }}
+          #   failureThreshold: {{ .Values.probes.readiness.failureThreshold }}
+          #   successThreshold: {{ .Values.probes.readiness.successThreshold }}
+          #   timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
+          #   periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
           ports:
           - containerPort: {{ .Values.ports.http.value }}
             name: {{ .Values.ports.http.name }}
